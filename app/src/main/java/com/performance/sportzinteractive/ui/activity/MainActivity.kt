@@ -29,8 +29,10 @@ import androidx.compose.ui.unit.sp
 import com.performance.sportzinteractive.ui.GoogleFonts
 import com.performance.sportzinteractive.ui.theme.SportzInteractiveTheme
 import com.performance.sportzinteractive.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
@@ -51,7 +53,7 @@ private fun Main(modifier: Modifier = Modifier, viewModel: MainViewModel? = null
     val scope = rememberCoroutineScope()
     LaunchedEffect(Unit) {
         scope.launch {
-            viewModel?.create()
+            viewModel?.getData()
         }
     }
 

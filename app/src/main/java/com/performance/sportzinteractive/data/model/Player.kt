@@ -2,6 +2,14 @@ package com.performance.sportzinteractive.data.model
 
 import com.google.gson.annotations.SerializedName
 
+data class Match (
+    val first: Team,
+    val second: Team,
+    @SerializedName("Date") var date: String = "",
+    @SerializedName("time") var time: String = "",
+    @SerializedName("Name") var venue: String = ""
+)
+
 data class Team (
     @SerializedName("Name_Full") val teamFullName: String,
     @SerializedName("Name_Short") val teamShortName: String,
